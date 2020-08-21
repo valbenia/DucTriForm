@@ -1,0 +1,31 @@
+<H1> Edit user </H1>
+<div class="container">
+  <% if @user.length != 0 %>
+  <% id = 1 %>
+  <h1 style="text-align: center">List form</h1>
+  <div class="form-center">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>email</th>
+      </tr>
+
+      <% @user.each do |form| %>
+      <tr>
+        <td><%= id %></td>
+        <td><%= form.first_name %></td>
+        <td><%= form.last_name %></td>
+        <td><%= form.email %></td>
+        <td><%= link_to 'Edit', edit_formal_path(form) %></td>
+        <td><%= link_to 'Delete', formal_path(form),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% id +=1 %>
+      <% end %>
+    </table>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<h1>Fill the Form below</h1>
+<%= form_with scope: :form,url: formal_index_path, local: true do |form| %>
+    <div class="container">
+        <div class="row">
+            <div>
+                <p>
+                    <%= form.label :Company %><br>
+                    <%= form.text_field :company %>
+                </p>
+                <p>
+                    <%= form.label :Date %><br>
+                    <%= form.date_field :date %>
+                </p>
+                <p>
+                    <%= form.label :Content %><br>
+                    <%= form.text_field :content %>
+                </p>
+                <p>
+                    <%= form.label :Note %><br>
+                    <%= form.text_field :note %>
+                </p>
+                <p>
+                    <%= form.submit "Submit"%>
+                </p>
+                <%= link_to 'Back', formal_index_path %>
+            </div>
+        </div>
+
+    </div>
+<% end %>

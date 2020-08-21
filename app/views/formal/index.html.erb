@@ -1,0 +1,34 @@
+<div class="container">
+  <% if @form.length != 0 %>
+  <% id = 1 %>
+  <h1 style="text-align: center">List form</h1>
+  <div class="form-center">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Company</th>
+        <th>Date</th>
+        <th>Content</th>
+        <th>Note</th>
+      </tr>
+
+      <% @form.each do |form| %>
+      <tr>
+        <td><%= id %></td>
+        <td><%= form.company %></td>
+        <td><%= form.date %></td>
+        <td><%= form.content %></td>
+        <td><%= form.note %></td>
+        <td><%= link_to 'Edit', edit_formal_path(form) %></td>
+        <td><%= link_to 'Delete', formal_path(form),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% id +=1 %>
+      <% end %>
+    </table>
+    <% end %>
+  </div>
+    <br>
+   <%= button_to "Add", new_formal_url, method: :get,class:'button_log'%>
+</div>    

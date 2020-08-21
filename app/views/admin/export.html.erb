@@ -1,0 +1,22 @@
+<h2>Export</h2>
+
+<%= form_with scope: :form,url: admin_export_path, local: true do |f| %>
+
+<div class="row">
+    <div class="form-group col-xs-8 col-md-3" >
+        <%= f.label :From %>
+        <%= f.date_field :from, class: "form-control",style:"text-align: center" %>
+    </div>
+</div>  
+<div class="row">
+    <div class="form-group col-xs-8 col-md-3" >
+        <%= f.label :To %>
+        <%= f.date_field :to, class: "form-control",style:"text-align: center" %>
+    </div>
+</div>
+<p>
+    <%= f.submit "Create"%>
+</p>
+<% end %>
+
+
